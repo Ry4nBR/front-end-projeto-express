@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:3000/data-hora';
+const API_URL = window.API_URL || 'http://localhost:3000/data-hora';
 
 const dataElement = document.getElementById('data');
 const horaElement = document.getElementById('hora');

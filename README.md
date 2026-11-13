@@ -16,13 +16,22 @@ Front-end simples para consumir a API de data e hora da aula 04.
 
 ## Configuração da API
 
-O arquivo `script.js` usa a URL abaixo por padrão:
+O arquivo `script.js` usa a URL abaixo por padrão para execução local:
 
 ```js
 const API_URL = 'http://localhost:3000/data-hora';
 ```
 
-Quando a API estiver publicada no Render, substitua pela URL pública real do serviço para o ambiente de produção.
+Para executar localmente, inicie a API na porta 3000 antes de abrir o front-end. Quando a API estiver publicada no Render, defina `window.API_URL` com a URL real do endpoint antes de carregar `script.js` no `index.html`:
+
+```html
+<script>
+  window.API_URL = 'https://URL-REAL-DA-API/data-hora';
+</script>
+<script src="./script.js"></script>
+```
+
+Sem essa configuração, o front-end continua usando `http://localhost:3000/data-hora`.
 
 ## Funcionalidades
 
