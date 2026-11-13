@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Consulta de Data e Hora</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="card">
+        <p class="eyebrow">API de data e hora</p>
+        <h1>Consulta de data e hora</h1>
+
+        <div class="info-box">
+          <label>Data</label>
+          <strong id="data">--</strong>
+        </div>
+
+        <div class="info-box">
+          <label>Hora</label>
+          <strong id="hora">--</strong>
+        </div>
+
+        <button id="consultar" type="button">Consultar agora</button>
+
+        <p id="status" class="status" aria-live="polite">Aguardando consulta...</p>
+      </section>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
