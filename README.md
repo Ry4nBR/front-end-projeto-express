@@ -16,13 +16,14 @@ Front-end simples para consumir a API de data e hora da aula 04.
 
 ## Configuração da API
 
-O arquivo `script.js` usa a URL abaixo por padrão para execução local:
+O arquivo `index.html` usa a URL do Render por padrão. Para testar com a API local,
+troque o valor de `window.API_URL` no `index.html` por:
 
 ```js
-const API_URL = 'http://localhost:3000/data-hora';
+window.API_URL = 'http://localhost:3000/data-hora';
 ```
 
-Para executar localmente, inicie a API na porta 3000 antes de abrir o front-end. Quando a API estiver publicada no Render, defina `window.API_URL` com a URL real do endpoint antes de carregar `script.js` no `index.html`:
+Para executar localmente, inicie a API na porta 3000 antes de abrir o front-end. A URL do Render já está configurada como padrão no `index.html`; se ela mudar, atualize `window.API_URL` antes de carregar `script.js`:
 
 ```html
 <script>
@@ -31,11 +32,16 @@ Para executar localmente, inicie a API na porta 3000 antes de abrir o front-end.
 <script src="./script.js"></script>
 ```
 
-Sem essa configuração, o front-end continua usando `http://localhost:3000/data-hora`.
+Sem outra configuração, o front-end usa a URL do Render definida no `index.html`.
+
+A resposta da rota deve incluir `dataHora` como um instante em formato ISO, por
+exemplo `2026-11-26T21:02:40.476Z`, e a lista `horarios`. Cada item da lista
+contém `cidade`, `pais`, `fusoHorario`, `data` e `hora`. O front-end cria os
+cartões a partir dessa lista e atualiza os relógios com base no mesmo instante.
 
 ## Funcionalidades
 
-- Exibe a data recebida da API
-- Exibe a hora recebida da API
-- Botão para consultar novamente
+- Exibe todos os horários enviados pela API, atualmente Brasília, Nova York, Londres, Paris e Tóquio
+- Atualiza os relógios a cada segundo a partir do instante recebido da API
+- Botão para sincronizar novamente com a API
 - Mensagem de carregamento e erro
