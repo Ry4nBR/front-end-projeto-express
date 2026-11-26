@@ -1,6 +1,6 @@
-# front-end-projeto-express
+# Front-end para consumir API -- Aula 04, Atividade 2.2
 
-Front-end simples para consumir a API de data e hora da aula 04.
+Front-end simples para consumir a API de data e hora da aula 04, atividade 2.2.
 É uma parte da atividade do projeto-express
 
 ## Como executar localmente
