@@ -3,33 +3,54 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Consulta de Data e Hora</title>
+    <meta
+      name="description"
+      content="Confira em um só lugar a data e o horário atual em diferentes cidades do mundo."
+    />
+    <title>Relógio mundial | Data e hora</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="container">
-      <section class="card">
-        <p class="eyebrow">API de data e hora</p>
-        <h1>Consulta de data e hora</h1>
+      <header class="page-header">
+        <div class="brand-mark" aria-hidden="true">◷</div>
+        <p class="eyebrow">Relógio mundial</p>
+        <h1>O mundo, <span>em tempo real.</span></h1>
+        <p class="intro">
+          Acompanhe a hora em diferentes cidades, sincronizada em uma única consulta.
+        </p>
+      </header>
 
-        <div class="info-box">
-          <label>Data</label>
-          <strong id="data">--</strong>
+      <section class="clock-section" aria-labelledby="clocks-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">Agora pelo mundo</p>
+            <h2 id="clocks-title">Horários locais</h2>
+          </div>
+          <button id="consultar" class="refresh-button" type="button">
+            <span class="refresh-icon" aria-hidden="true">↻</span>
+            <span>Sincronizar</span>
+          </button>
         </div>
 
-        <div class="info-box">
-          <label>Hora</label>
-          <strong id="hora">--</strong>
-        </div>
-
-        <button id="consultar" type="button">Consultar agora</button>
-
-        <p id="status" class="status" aria-live="polite">Aguardando consulta...</p>
+        <div id="clock-grid" class="clock-grid"></div>
       </section>
+
+      <footer class="page-footer">
+        <span class="status-dot" aria-hidden="true"></span>
+        <p id="status" class="status" role="status">Conectando à API...</p>
+        <p class="footer-note">Todos os horários partem do mesmo instante.</p>
+      </footer>
     </main>
 
     <script>
-      window.API_URL = 'https://projeto-express-iqa3.onrender.com/data-hora';
+      window.API_URL = window.API_URL || 'https://projeto-express-iqa3.onrender.com/data-hora';
     </script>
     <script src="./script.js"></script>
   </body>
